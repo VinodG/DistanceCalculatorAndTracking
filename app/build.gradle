@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "com.example.tk_employee.myapplication"
+        minSdkVersion 19
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
+//    implementation 'com.android.support:appcompat-v7:27.0.3'
+    //    implementation 'com.android.support:appcompat-v7:23.1.1'
+    //    implementation 'com.android.support:appcompat-v7:23.4.0'
+    //
+    implementation 'com.android.support:appcompat-v7:23.1.1'
+//    implementation 'com.android.support:design:23.1.1'
+
+
+    api project(path: ':distancecalculator')
+
+    //    implementation 'com.google.android.gms:play-services:15.0.0'
+    implementation 'com.google.android.gms:play-services:8.4.0'
+    implementation 'com.google.android.gms:play-services-maps:8.4.0'
+
+    implementation 'com.android.support:multidex:1.0.1'
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+}
